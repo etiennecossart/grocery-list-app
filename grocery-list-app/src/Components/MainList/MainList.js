@@ -1,14 +1,15 @@
 import React from 'react'
-console.log('arrived at main List!')
+import Product from '../Product/Product'
+import GroceryData from '../../Resources/grocery_data'
+
 
 function MainList(){
+    const groceryList = GroceryData.map(item => <Product key = {item.id} product = {item} />)
     return(
         <div>
             <h1>This is a list</h1>
             <ul>
-                <li>Eggs</li>
-                <li>Butter</li>
-                <li>Carrots</li>
+                {groceryList}
             </ul>
         </div>
     )
